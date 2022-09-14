@@ -30,3 +30,94 @@ code {
 a {
 	color: #2574A9;
 }
+.wave-animation {
+  position: relative;
+  width: 100%;
+  height: 143px;
+  background-color: #8bcfd4;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+.wave-animation .wave {
+  position: absolute;
+  width: 100%;
+  height: 143px;/*PNG*/
+  top:0;
+  left:0;
+  background-image: url('https://vitalflow.com.ar/img/anim-onda.png');
+  animation: anim 10s linear infinite;
+  
+}
+.wave-animation .wave:before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 143px;
+  top:0;
+  left:0;
+  background-image: url('https://vitalflow.com.ar/img/anim-onda.png');
+  opacity: 0.4;
+  animation: anim-rev 10s linear infinite;
+  
+}
+.wave-animation .wave:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 143px;
+  top:0;
+  left:0;
+  background-image: url('https://vitalflow.com.ar/img/anim-onda.png');
+  opacity: 0.6;
+  animation-delay: -5s;
+  animation: anim 20s linear infinite;
+  
+}
+@keyframes anim {
+  0%
+  {
+    background-position: 0;
+  }
+  100%
+  {
+    background-position: 1360px;
+  }
+}
+@keyframes anim-rev {
+  0%
+  {
+    background-position: 1360;
+  }
+  100%
+  {
+    background-position: 0px;
+  }
+}
+.data-wrapper{
+    display:flex;
+    flex-direction:row;
+}
+.result-wrapper, .usage-wrapper{
+    padding:10px;
+    border-radius:10px;
+    box-shadow:0 0 5px black;
+}
+.usage-wrapper{
+    width:fit-content;
+    background:linear-gradient(-45deg, blue, grey);
+    margin-right:30px;
+    margin-left:10px;
+}
+#api-request{
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    transfition:color .6s ease;
+}
+#api-request:hover{
+    color:blue;
+}
+code{
+    background-color: rgba(0, 0, 0, 0.1);
+}
